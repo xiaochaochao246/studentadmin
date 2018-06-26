@@ -1,0 +1,110 @@
+
+  <% include ../admin/header.html %>
+           <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/admin">首页</a></li>
+                        <li><a href="/students/posts">学生管理</a></li>
+                        <li><a href="/score/list">成绩管理</a></li>
+                        <li><a href="/course/list">课程管理</a></li>
+                        <li><a href="/teachers/cats">教师管理</a></li>
+                        <li><a href="/depars/list">院系管理</a></li>
+                        <li><a href="/profession/list">专业管理</a></li>
+                        <li><a href="/class/list">班级管理</a></li>
+                    </ul>
+                </div>
+                <!-- Main content -->
+                <section class="content" style="padding-top:5px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box">
+                                <div class="box-header" style="height: 50px;">
+                                    <h3 class="box-title"></h3>
+                                    <a href="/score/list/add" class="btn btn-default pull-right">添加成绩</a>
+                                    <div class="col-lg-6" style="display: flex;
+                                    justify-content: space-around;flex-direction: row;width: 800px;">
+                                        <form action="/score/list/getcourseYear" method="POST" style="width: 300px; float: left;"
+                                              enctype="application/x-www-form-urlencoded">
+                                            <input type="text" id="courseYear" name="courseYear" class="form-control" style="width: 200px;"
+                                                   placeholder="请输入学年......">
+                                            <span class="input-group-btn"
+                                                  style="float: left;position: relative;top:-34px;left:200px;">
+                                                 <button class="btn btn-default" type="submit" style="float: left;">查找</button>
+                                             </span>
+                                        </form>
+                                        <form action="/score/list/getStuId" method="POST" style="width: 300px; float: left;"
+                                              enctype="application/x-www-form-urlencoded">
+                                            <input type="text" id="stuID" name="stuID" class="form-control" style="width: 200px;"
+                                                   placeholder="请输入学号......">
+                                            <span class="input-group-btn"
+                                                  style="float: left;position: relative;top:-34px;left:200px;">
+                                                 <button class="btn btn-default" type="submit" style="float: left;"
+                                                         id="btn">查找</button>
+                                             </span>
+                                        </form>
+                                    </div><!-- /.col-lg-6 -->
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+                                    <table class="table table-bordered">
+                                        <tbody><tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>学号</th>
+                                            <th>姓名</th>
+                                            <th>学年</th>
+                                            <th>课程名</th>
+                                            <th>任课老师</th>
+                                            <th>实验成绩</th>
+                                            <th>平时成绩</th>
+                                            <th>理论成绩</th>
+                                            <th>总成绩</th>
+                                            <!--<th>创建时间</th>-->
+                                            <th style="width: 20%">操作</th>
+                                        </tr>
+                                        <% data.forEach(function(item,idx){ %>
+                                        <tr>
+                                            <td style="width: 10px"><%= idx+1 %></td>
+                                            <td><%= item.stuID %></td>
+                                            <td><%= item.stuUsername %></td>
+                                            <td><%= item.courseYear %></td>
+                                            <td><%= item.courseName %></td>
+                                            <td><%= item.teacherName %></td>
+                                            <td><%= item.experimentScore %></td>
+                                            <td><%= item.ordinaryScore %></td>
+                                            <td><%= item.theoryScore %></td>
+                                            <td><%= item.totalScore %></td>
+                                            <td style="width: 20%">
+                                                <a href="/score/list/edit?id=<%= item._id %>" class="btn btn-primary" title="编辑"><span class="fa fa-edit"></span> 编辑</a>
+                                                <a href="/score/list/delete?id=<%= item._id %>" class="btn btn-danger" title="删除" onclick="return confirm('是否删除？');"><span class="fa fa-trash-o"></span> 删除</a>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                                                            </tbody></table>
+                                </div><!-- /.box-body -->
+                                <nav aria-label="Page navigation clearfix box-footer">
+                                    <ul class="pagination pagination-bg no-margin pull-right">
+                                        <li>
+                                            <a href="/score/list?page=1" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="/score/list?page=1" class="active">1</a></li>
+                                        <li><a href="/score/list?page=2">2</a></li>
+                                        <li><a href="/score/list?page=3">3</a></li>
+                                        <li><a href="/score/list?page=4">4</a></li>
+                                        <li><a href="/score/list?page=5">5</a></li>
+                                        <li>
+                                            <a href="/score/list?page=5" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /.content -->
+
+                <% include ../admin/footer.html %>
+

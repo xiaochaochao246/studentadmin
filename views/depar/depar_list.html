@@ -1,0 +1,84 @@
+
+<% include ../admin/header.html %>
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/admin">首页</a></li>
+                        <li><a href="/students/posts">学生管理</a></li>
+                        <li><a href="/score/list">成绩管理</a></li>
+                        <li><a href="/course/list">课程管理</a></li>
+                        <li><a href="/teachers/cats">教师管理</a></li>
+                        <li><a href="/depars/list">院系管理</a></li>
+                        <li><a href="/profession/list">专业管理</a></li>
+                        <li><a href="/class/list">班级管理</a></li>
+                    </ul>
+                </div>
+                <!-- Main content -->
+                <section class="content" style="padding-top:5px;">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title"></h3>
+                                    <a href="/depars/list/add" class="btn btn-default pull-right">添加院系</a>
+                                    <div class="col-lg-6" style="position: absolute">
+                                        <form action="/depars/list/getdepID" method="POST" enctype="application/x-www-form-urlencoded">
+                                            <input type="text" id="depID" name="depID" class="form-control" style="width: 200px;" placeholder="请输入院系编号......">
+                                            <span class="input-group-btn" style="float: left;position: relative;top:-34px;left:200px;">
+                                                 <button class="btn btn-default" type="submit" style="float: left;" id="btn">查找</button>
+                                            </span>
+                                        </form>
+                                    </div><!-- /.col-lg-6 -->
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+                                    <table class="table table-bordered">
+                                        <tbody><tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>院系编号</th>
+                                            <th>地址</th>
+                                            <th>办公电话</th>
+                                            <th>院系名称</th>
+                                            <th style="width: 20%">操作</th>
+                                        </tr>
+                                        <% data.forEach(function(item,idx){ %>
+                                        <tr>
+                                            <td><%= idx+1 %></td>
+                                            <td><%= item.depID %></td>
+                                            <td><%= item.depAdr %></td>
+                                            <td><%= item.depTel %></td>
+                                            <td><%= item.depName %></td>
+                                            <td>
+                                                <a href="/depars/list/edit?id=<%= item._id %>" class="btn btn-default" title="编辑"><span class="fa fa-edit"></span> 编辑</a>
+                                                <a href="/depars/list/delete?id=<%= item._id %>" class="btn btn-danger" title="删除" onclick="return confirm('是否删除？');"><span class="fa fa-trash-o"></span> 删除</a>
+                                            </td>
+                                        </tr>
+                                        <%})%>
+                                    </tbody></table>
+                                </div><!-- /.box-body -->
+                                <nav aria-label="Page navigation clearfix box-footer">
+                                    <ul class="pagination pagination-bg no-margin pull-right">
+                                        <li>
+                                            <a href="/depars/list?page=1" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="/depars/list?page=1" class="active">1</a></li>
+                                        <li><a href="/depars/list?page=2">2</a></li>
+                                        <li><a href="/depars/list?page=3">3</a></li>
+                                        <li><a href="/depars/list?page=4">4</a></li>
+                                        <li><a href="/depars/list?page=5">5</a></li>
+                                        <li>
+                                            <a href="/depars/list?page=5" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                </section><!-- /.content -->
+                <% include ../admin/footer.html %>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/login_v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:49 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>学生 修改</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/login.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <script>
+        if(window.top!==window.self){window.top.location=window.location};
+    </script>
+    <style>
+        .btn-success {
+            background-color: #1c84c6;
+            border-color: #1c84c6;
+            color: #FFF
+        }
+        .btn-success:hover {
+            background-color: #1a7bb9;
+            border-color: #1a7bb9;
+            color: #FFF
+        }
+    </style>
+    <script src="/js/checkCodes.js"></script>
+</head>
+
+<body class="signin" onload="createCode()">
+<div class="signinpanel">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <form id="form2" action="/stumodify/stumodify" method="post" onSubmit="return false">
+                <h4 class="no-margins" style="font-weight:bold; font-size:24px;">学生修改密码</h4>
+                <input type="text" name="stuID" class="form-control uname" placeholder="学号" />
+                <input type="text" name="stuTel" class="form-control uname" placeholder="身份证号" />
+                <input type="password" name="stuPwd" class="form-control pword m-b" placeholder="新密码" />
+                <table class="logtlb">
+                    <tr>
+                        <td width="0" class="txtLeft"><input name="verifyCode" placeholder="验证码"
+                                                             id="verifyCodes" class="form-control" type="text">
+                        </td>
+                        <td width="0" class="txtLeft">
+                            <input type="button"  id="checkCodes" class="right chs"
+                                   style="width:60px;height:30px;margin-top:15px;" value="" onClick="createCode()" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+
+                        </td>
+                    </tr>
+                </table>
+                <button class="btn btn-success btn-block" type="submit" onclick="validatecode();">修改</button>
+            </form>
+        </div>
+    </div>
+    <div class="signup-footer">
+        <div class="text-center">
+            &copy; 2018 Student enrollment management system
+        </div>
+    </div>
+</div>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/login_v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:52 GMT -->
+</html>

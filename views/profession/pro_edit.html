@@ -1,0 +1,62 @@
+
+<% include ../admin/header.html %>
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        专业修改
+                        <small>专业</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="../admin/admin.html"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+                        <li class="category_list.html"><a href="/profession/list">专业</a></li>
+                        <li class="active">专业修改</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box">
+                                <!--?id=<%= id%>-->
+                                <form action="/profession/list/edit?id=<%= id%>" method="post">
+
+                                    <div class="box-header">
+                                        <h3 class="box-title"></h3>
+                                        <a href="/profession/list" class="btn btn-default pull-right">专业列表</a>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="inputTitle">专业代码</label>
+                                            <input type="title" name="proID" placeholder="专业代码" id="inputTitle" value="<%= data.proID %>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputOrderNumber">学科门类</label>
+                                            <input type="title" name="proDiscip" placeholder="学科门类" id="inputOrderNumber" value="<%= data.proDiscip %>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputNumber">所属院系</label>
+                                            <input type="title" name="proDep" placeholder="所属院系" id="inputNumber" value="<%= data.proDep %>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputName">专业名称</label>
+                                            <input type="title" name="proName" placeholder="专业名称" id="inputName" value="<%= data.proName %>" class="form-control">
+                                        </div>
+
+                                        <input type="hidden" name="id" value="<%= data._id %>">
+
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer clearfix">
+                                        <button class="btn btn-primary" type="submit">提交</button>
+                                    </div><!-- /.box-footer -->
+                                </form>
+
+                            </div><!-- /.box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                </section><!-- /.content -->
+                <% include ../admin/footer.html %>

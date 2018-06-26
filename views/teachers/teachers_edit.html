@@ -1,0 +1,74 @@
+
+<% include ../admin/header.html %>
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        教师修改
+                        <small>教师</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="../admin/admin.html"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+                        <li class="category_list.html"><a href="../admin/admin.html">教师</a></li>
+                        <li class="active">教师修改</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box">
+                                <!--?id=<%= id%>-->
+                                <form action="/teachers/cats/edit?id=<%= id%>" method="post">
+
+                                    <div class="box-header">
+                                        <h3 class="box-title"></h3>
+                                        <a href="/teachers/cats" class="btn btn-default pull-right">教师列表</a>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="teaID">教师工号</label>
+                                            <input type="text" name="teaID" id="teaID" value="<%= data.teaID %>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="teaUsername">姓名</label>
+                                            <input type="text" name="teaUsername" id="teaUsername" value="<%= data.teaUsername %>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="teaTel">联系方式</label>
+                                            <input type="text" name="teaTel" id="teaTel" value="<%= data.teaTel %>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="teaSex">性别</label>
+                                            <select name="teaSex" id="teaSex" class="form-control">
+                                                <option>男</option>
+                                                <option>女</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="teaRecord">学历</label>
+                                            <select name="teaRecord" id="teaRecord" class="form-control">
+                                                <option>本科学历</option>
+                                                <option>研究生硕士</option>
+                                                <option>博士学历</option>
+                                                <option>博士后学历</option>
+                                            </select>
+                                        </div>
+
+                                        <input type="hidden" name="id" value="<%= data._id %>">
+
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer clearfix">
+                                        <button class="btn btn-primary" type="submit">提交</button>
+                                    </div><!-- /.box-footer -->
+                                </form>
+
+                            </div><!-- /.box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                </section><!-- /.content -->
+                <% include ../admin/footer.html %>

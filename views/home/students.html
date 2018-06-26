@@ -1,0 +1,53 @@
+<% include header.html%>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header" style="height:68px;margin-top: 40px;">
+                        <h3 class="box-title"></h3>
+                        <a href="/scores" class="btn btn-primary pull-right"
+                           style="margin-right: 20px; color: #fff;">成绩列表</a>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>身份证号</th>
+                                <th>班级</th>
+                                <th>专业</th>
+                                <th>院系</th>
+                                <!--<th>创建时间</th>-->
+                                <th style="width: 20%">操作</th>
+                            </tr>
+                            <% users.forEach(function(item,idx){ %>
+                            <tr>
+                                <td style="width: 10px"><%= idx+1 %></td>
+                                <td><%= item.stuID %></td>
+                                <td><%= item.stuUsername %></td>
+                                <td><%= item.stuSex %></td>
+                                <td><%= item.stuTel %></td>
+                                <td><%= item.className %></td>
+                                <td><%= item.stuPro %></td>
+                                <td><%= item.stuColl %></td>
+                                <td style="width: 20%">
+                                    <a href="/scores" class="btn btn-info"
+                                       title="成绩">查看成绩</a>
+                                    <a href="/about" class="btn btn-info"
+                                       title="简介">查看简介</a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% include footer.html %>

@@ -1,0 +1,70 @@
+<% include header.html %>
+<style>
+    .content{
+        padding:0 30px;
+        width: 850px;
+    }
+    .content h3{
+        text-align: center;
+    }
+    .content .cont .title{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .content .cont p{
+        font-size: 15px;
+        text-indent: 2em;
+        line-height: 1.5em;
+        color:#00ca6d;
+    }
+</style>
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 900px;">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/admin">首页</a></li>
+                        <li><a href="/students/posts">学生管理</a></li>
+                        <li><a href="/score/list">成绩管理</a></li>
+                        <li><a href="/course/list">课程管理</a></li>
+                        <li><a href="/teachers/cats">教师管理</a></li>
+                        <li><a href="/depars/list">院系管理</a></li>
+                        <li><a href="/profession/list">专业管理</a></li>
+                        <li><a href="/class/list">班级管理</a></li>
+                    </ul>
+                </div>
+                <!-- Main content -->
+                <section class="content">
+                    <h3>学生学籍管理系统使用说明</h3>
+                    <div class="cont">
+                        <div class="title">
+                            &nbsp;&nbsp;主要功能
+                        </div>
+                        <p>本学籍管理系统主要功能有学生管理，成绩管理，课程管理，
+                            教师管理，院系管理，专业管理，班级管理。数据更新功能分为三部分：学生相关信息的增加，删除和修改。</p>
+                        <p>
+                            数据添加功能提供便捷的录入界面，通过应用程序将学生数据添加到数据库中。
+                            数据删除功能将不满足要求的相关记录从数据库中删除。
+                            数据修改功能允许对他所指定记录的相关信息进行修改。
+                            数据查询功能允许管理员能根据学生学号查询学生信息包括成绩信息。
+                        </p>
+                        <div class="title">
+                            &nbsp;&nbsp;性能要求
+                        </div>
+                        <p>
+                            该管理系统可以方便快捷的完成学生信息管理的各项工作，录入数据合法性的校验程度高，
+                            数据查询速度快，使用方便。
+                        </p>
+                        <div class="title">
+                            &nbsp;&nbsp;相关用户
+                        </div>
+                        <p>
+                            系统管理员与维护人员：计算机水平好，文化程度高，你能胜任系统管理工作。
+                        </p>
+                        <p>
+                            操作人员：对计算机熟练应用。
+                        </p>
+                    </div>
+                </section><!-- /.content -->
+
+                <% include footer.html %>

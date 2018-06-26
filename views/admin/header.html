@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管理中心</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- bootstrap 3.0.2 -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/logo.css" />
+
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+
+</head>
+<body class="skin-blue">
+<!-- header logo: style can be found in header.less -->
+<header class="header">
+    <a href="/" class="logo">
+        <!-- Add the class icon to your logo image or logo icon to add the margining -->
+        Admin(管理员)
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a href="#" class="logo" style="width:350px;background-color: #3c8dbc">
+            <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            欢迎使用学生学籍管理系统
+        </a>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>Admin<i class="caret"></i></span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-light-blue">
+                            <img src="/img/avatar04.png" class="img-circle" alt="User Image" />
+                            <p>
+                                Admin - 系统管理员
+                                <small>注册于2018年1月16日</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="/admin/about" class="btn btn-default btn-flat">用户信息</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="/admin/users/logout" class="btn btn-default btn-flat">注销登陆</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="/img/avatar04.png" class="img-circle" alt="User Image" />
+                </div>
+                <div class="pull-left info">
+                    <p>Hello, 火焰天使</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="操作"/>
+                    <span class="input-group-btn">
+                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="/admin">
+                        <i class="fa fa-dashboard"></i> <span>控制台</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file"></i> <span>学生管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/students/posts"><i class="fa fa-list"></i>学生列表</a></li>
+                        <li><a href="/students/posts/add"><i class="fa fa-edit"></i>学生添加</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file"></i> <span>成绩管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/score/list"><i class="fa fa-list"></i>成绩列表</a></li>
+                        <li><a href="/score/list/add"><i class="fa fa-edit"></i>成绩添加</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file"></i> <span>课程管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/course/list"><i class="fa fa-list"></i>课程列表</a></li>
+                        <li><a href="/course/list/add"><i class="fa fa-edit"></i>课程添加</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-th-large"></i> <span>教师管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/teachers/cats"><i class="fa fa-list"></i>教师列表</a></li>
+                        <li class="active"><a href="/teachers/cats/add"><i class="fa fa-edit"></i>教师添加</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file"></i> <span>院系管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/depars/list"><i class="fa fa-list"></i>院系列表</a></li>
+                        <li><a href="/depars/list/add"><i class="fa fa-edit"></i>院系添加</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-tag"></i> <span>专业管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/profession/list"><i class="fa fa-list"></i>专业列表</a></li>
+                        <li><a href="/profession/list/add"><i class="fa fa-edit"></i>专业添加</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-tag"></i> <span>班级管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/class/list"><i class="fa fa-list"></i>班级列表</a></li>
+                        <li><a href="/class/list/add"><i class="fa fa-edit"></i>班级添加</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
